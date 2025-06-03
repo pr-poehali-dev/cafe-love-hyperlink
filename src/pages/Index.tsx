@@ -1,12 +1,22 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Header from "@/components/Header";
+import ProductGrid from "@/components/ProductGrid";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-rose-50">
+      <Header />
+      <ProductGrid />
+
+      <footer className="bg-pink-100 py-8 mt-12">
+        <div className="max-w-6xl mx-auto text-center px-6">
+          <p className="text-pink-700 text-lg font-medium">
+            Кафе "Любовь" - создаем моменты счастья каждый день 💖
+          </p>
+          <p className="text-pink-600 mt-2">
+            ул. Романтическая, 14 | +7 (999) 123-45-67
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };
