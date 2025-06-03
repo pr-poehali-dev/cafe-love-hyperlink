@@ -18,7 +18,7 @@ const Header = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <Link to="/notepad">
+          <Link to="/">
             <Button
               variant="outline"
               className="border-pink-300 text-pink-700 hover:bg-pink-100 px-4 py-2 rounded-full"
