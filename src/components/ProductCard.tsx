@@ -2,6 +2,7 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
+import { useCart } from "@/contexts/CartContext";
 
 interface ProductCardProps {
   id: number;
@@ -13,12 +14,19 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({
+  id,
   name,
   description,
   price,
   image,
   category,
 }: ProductCardProps) => {
+  const { addItem } = useCart();
+
+  const handleAddToCart = () => {
+    addItem({ id, name, price, image });
+  };
+
   return (
     <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 bg-white border-pink-200">
       <div className="relative">
@@ -39,7 +47,10 @@ const ProductCard = ({
       </CardContent>
 
       <CardFooter className="p-4 pt-0">
-        <Button className="w-full bg-pink-500 hover:bg-pink-600 text-white rounded-full transition-colors duration-300">
+        <Button
+          onClick={handleAddToCart}
+          className="w-full bg-pink-500 hover:bg-pink-600 text-white rounded-full transition-colors duration-300"
+        >
           <Icon name="Plus" size={16} />В корзину
         </Button>
       </CardFooter>
